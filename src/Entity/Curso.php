@@ -20,7 +20,7 @@ class Curso
     /**
      * @Comumn(type="string")
      */
-    private $curso;
+    private $nome;
 
     /**
      * @ManyToMany(targetEntity="Aluno", inversedBy="cursos")
@@ -37,9 +37,9 @@ class Curso
         return $this->id;
     }
 
-    public function getCurso(): string
+    public function getNome(): string
     {
-        return $this->curso;
+        return $this->nome;
     }
 
     public function setCurso(string $curso): self
