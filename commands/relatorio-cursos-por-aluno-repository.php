@@ -14,10 +14,8 @@ $alunosRepository = $entityManager->getRepository(Aluno::class);
 $debugStack = new DebugStack();
 $entityManager->getConfiguration()->setSQLLogger($debugStack);
 
-$classeAluno = Aluno::class;
-$query = $entityManager->createQuery($dql);
 /** @var Aluno[] $alunos */
-$alunos = $query->getResult();
+$alunos = $alunosRepository->buscaCursosPorAluno();
 
 foreach($alunos as $aluno) {
 //    print_r($debugStack);
